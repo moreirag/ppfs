@@ -59,3 +59,23 @@ Os resultados sao salvos em `.npz` na pasta `results/` com:
 
 - Os metodos mantem a logica central da implementacao MATLAB original.
 - Pequenas diferencas numericas podem ocorrer devido a detalhes de operadores e ordenacao do `pymoo`.
+
+## Plot das solucoes no espaco de objetivos
+
+Depois de gerar resultados `.npz`, use:
+
+```bash
+PYTHONPATH=. python scripts/plot_objectives.py \
+  results/roidwu_wfg9_M2_D5_seed1.npz \
+  --title "ROIDWU - WFG9" \
+  --output results/roidwu_wfg9_plot.png
+```
+
+Comparando duas execucoes/algoritmos no mesmo grafico:
+
+```bash
+PYTHONPATH=. python scripts/plot_objectives.py \
+  results/roidwu_wfg9_M2_D5_seed1.npz \
+  results/roinsga2_dtlz2_M2_D7_seed1.npz \
+  --title "Comparacao"
+```
